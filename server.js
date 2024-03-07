@@ -65,7 +65,7 @@ app.post('/register', async (req, res) => {
         await RegistrationToken.create({ token, uniqueIdentifier, email });
 
         // Construct the registration link with the unique identifier
-        const registrationLink = `http://localhost:3000/verify-registration?token=${uniqueIdentifier}`;
+        const registrationLink = `https://jwtauthnode.onrender.com/verify-registration?token=${uniqueIdentifier}`;
 
         // Send registration email with the registration link
         await sendRegistrationEmail(email, registrationLink);
